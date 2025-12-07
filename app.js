@@ -11,8 +11,8 @@ const app = express();
 
 //api/v1/auth/sign-up
 app.use('/api/v1/auth', authRouter);
-app.use('/api/v1/user', userRouter);
-app.use('/api/v1/subscription', subscriptionRouter);
+app.use('/api/v1/users', userRouter);
+app.use('/api/v1/subscriptions', subscriptionRouter);
 
 app.get('/', (req, res) => {
   res.send('Welcome to the Subscription Tracker API');
