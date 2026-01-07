@@ -14,7 +14,7 @@ subscriptionRouter.put('/:id', (req, res) => res.send({ title:'UPDATE subsciptio
 
 subscriptionRouter.delete('/:id', (req, res) => res.send({ title:'DELETE subsciption' }));
 
-subscriptionRouter.post('/user/:id',authorize , getUserSubscriptions);
+subscriptionRouter.post('/user/:id',authorize ,getUserSubscriptions);
 
 subscriptionRouter.put('/:id/cancel', (req, res) => res.send({ title:'CANCLE subsciption' }));
 
