@@ -1,4 +1,24 @@
-Workflows
+|Subscription Tracker|
+
+Developed and developed a production-ready RESTful API from scratch, following real world backend architecture principles.
+
+Built a Node.js and Express.js server with modular routing, controller, and middleware for scalability and maintainability.
+
+Developed authentication and authorization using JWT, protecting private routes and handling user sessions securely.
+
+Implemented MongoDB database intergration with Mongoose, including schema design, data validation, and relationships.
+
+Implemented business logic for subscription-based workflows. Including background tasks and scheduled jobs.
+
+TestedAPI endpoints manually with HTTPie.
+
+Containerized services with Docker, and automated deployment pipelines using GitHub Actions. ensuring seamless CI/CD workflows.
+
+Key Technologies: Node.js, Express.js, MongoDB, Mongoose, Docker, CI/CD, REST APIs, JWT authentication, HTTPie, Backend architecture.
+
+
+
+|Workflows|
 1. Trigger the workflow - The workflow begins whenever a user create or submits a new subscription. We pass the created subscription ID to our workflow.
 
 2. Retrieving Subscription Details
