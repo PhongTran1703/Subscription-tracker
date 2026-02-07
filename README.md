@@ -1,45 +1,68 @@
-|Subscription Tracker|
+| Subscription Tracker (Backend API) |
 
-Developed and developed a production-ready RESTful API from scratch, following real world backend architecture principles.
+Designed and built a production-ready RESTful API from scratch, following real-world backend architecture and best practices.
 
-Built a Node.js and Express.js server with modular routing, controller, and middleware for scalability and maintainability.
+-Developed a Node.js & Express.js server with modular routing, controllers, and middleware to ensure scalability and maintainability
 
-Developed authentication and authorization using JWT, protecting private routes and handling user sessions securely.
+-Implemented JWT-based authentication and authorization, securing private routes and managing user sessions
 
-Implemented MongoDB database intergration with Mongoose, including schema design, data validation, and relationships.
+-Integrated MongoDB with Mongoose, including schema design, data validation, and model relationships
 
-Implemented business logic for subscription-based workflows. Including background tasks and scheduled jobs.
+-Built subscription-based business logic, supporting renewals, reminders, and background processing
 
-TestedAPI endpoints manually with HTTPie.
+-Implemented scheduled jobs and background tasks to handle automated subscription workflows
 
-Containerized services with Docker, and automated deployment pipelines using GitHub Actions. ensuring seamless CI/CD workflows.
+-Manually tested API endpoints using HTTPie
 
-Key Technologies: Node.js, Express.js, MongoDB, Mongoose, Docker, CI/CD, REST APIs, JWT authentication, HTTPie, Backend architecture.
+-Containerized the application with Docker and set up CI/CD pipelines using GitHub Actions for automated testing and deployment
 
+Key Technologies:
+Node.js, Express.js, MongoDB, Mongoose, REST APIs, JWT Authentication, Docker, GitHub Actions (CI/CD), HTTPie, Backend Architecture
 
+------------------------------------------------------------------------------------------------------------------------------------------
 
-|Workflows|
-1. Trigger the workflow - The workflow begins whenever a user create or submits a new subscription. We pass the created subscription ID to our workflow.
+| Subscription Reminder Workflow |
 
-2. Retrieving Subscription Details
--The process extracts the subsctiption ID from the context.
--It then searches for the corresponding subscription in the database.
+1. Workflow Trigger
+
+-Initiated when a user creates or submits a new subscription
+
+-The newly created subscription ID is passed into the workflow context
+
+2. Retrieve Subscription Details
+
+-Extracts the subscription ID from the context
+
+-Queries the database for the corresponding subscription
 
 3. Validation Checks
--If the subscription does not exists, an error is logged, and the process terminates.
--If the subscription exists, its status is checked:
-   .If inactive, the status is logged, and the process exist.
-   .If active, the renewal date is verified.
+
+-If the subscription does not exist, logs an error and terminates the process
+
+-If the subscription exists:
+
+---If inactive → logs status and exits
+
+---If active → validates the renewal date
 
 4. Renewal Date Evaluation
--If the renewal date has passed, it logs this information and exits.
--if the renewal date is in the future, the reminder loop begins.
+
+-If the renewal date has already passed, logs the event and exits
+
+-If the renewal date is in the future, initiates the reminder loop
 
 5. Reminder Scheduling
--For each predefined reminder:
-   .The reminder date is calculated.
-   .If the reminder date is in the future, the system waits until that time.
-   .Once the reminder date arrives (or if it has already passed), the reminder email is sent.
+
+-Iterates through predefined reminder intervals
+
+-Calculates each reminder date
+
+-If the reminder date is in the future, the system waits until that time
+
+-Once the reminder date arrives (or if it has already passed), sends a reminder email
+
 6. Completion
--The process repeats for all reminders in the list
--After processing all reminders, the workflow concludes.
+
+-Repeats the process for all configured reminders
+
+-Terminates the workflow after all reminders are processed
