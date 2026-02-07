@@ -16,7 +16,7 @@ Designed and built a production-ready RESTful API from scratch, following real-w
 
 - Containerized the application with Docker and set up CI/CD pipelines using GitHub Actions for automated testing and deployment
 
-Key Technologies:
+** Key Technologies: **
 Node.js, Express.js, MongoDB, Mongoose, REST APIs, JWT Authentication, Docker, GitHub Actions (CI/CD), HTTPie, Backend Architecture
 
 ------------------------------------------------------------------------------------------------------------------------------------------
@@ -71,9 +71,9 @@ flowchart TD
 
 - If the subscription exists:
 
--- If inactive → logs status and exits
+   - If inactive → logs status and exits
 
--- If active → validates the renewal date
+   - If active → validates the renewal date
 
 4. Renewal Date Evaluation
 
