@@ -23,6 +23,36 @@ Node.js, Express.js, MongoDB, Mongoose, REST APIs, JWT Authentication, Docker, G
 
 | Subscription Reminder Workflow |
 
+```mermaid
+flowchart TD
+    Start([Subscription Created])
+    GetSub[Retrieve Subscription]
+    Exists{Subscription Exists?}
+    StatusActive{Status Active?}
+    ValidDate{Renewal Date in Future?}
+    ForReminders[Loop: Reminders]
+    CalcDate[Compute Reminder Date]
+    FutureDate{Reminder Date > Now?}
+    WaitTime[Wait Until Reminder Date]
+    SendEmail[Send Reminder Email]
+    End([Workflow Complete])
+
+    Start --> GetSub
+    GetSub --> Exists
+    Exists -- No --> End
+    Exists -- Yes --> StatusActive
+    StatusActive -- No --> End
+    StatusActive -- Yes --> ValidDate
+    ValidDate -- No --> End
+    ValidDate -- Yes --> ForReminders
+    ForReminders --> CalcDate
+    CalcDate --> FutureDate
+    FutureDate -- Yes --> WaitTime --> SendEmail
+    FutureDate -- No --> SendEmail
+    SendEmail --> ForReminders
+    ForReminders --> End
+```
+
 1. Workflow Trigger
 
 -Initiated when a user creates or submits a new subscription
@@ -66,3 +96,4 @@ Node.js, Express.js, MongoDB, Mongoose, REST APIs, JWT Authentication, Docker, G
 -Repeats the process for all configured reminders
 
 -Terminates the workflow after all reminders are processed
+
