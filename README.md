@@ -99,7 +99,7 @@ flowchart TD
 
 
 ### Entity Relationship Diagram (ERD)
-
+```mermaid
 erDiagram
     USER ||--o{ SUBSCRIPTION : owns
     USER {
@@ -118,6 +118,7 @@ erDiagram
         number reminderDaysBefore
         boolean isActive
     }
+```    
 
 
 🧩 Database Design Overview
