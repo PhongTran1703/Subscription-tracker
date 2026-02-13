@@ -97,3 +97,47 @@ flowchart TD
 
 - Terminates the workflow after all reminders are processed
 
+
+### Entity Relationship Diagram (ERD)
+
+erDiagram
+    USER ||--o{ SUBSCRIPTION : owns
+    USER {
+        ObjectId _id
+        string name
+        string email
+        string password
+    }
+    SUBSCRIPTION {
+        ObjectId _id
+        ObjectId userId
+        string name
+        number price
+        string billingCycle
+        date renewalDate
+        number reminderDaysBefore
+        boolean isActive
+    }
+
+
+🧩 Database Design Overview
+
+- User → Subscription is a one-to-many relationship
+
+- Each User can manage multiple Subscriptions
+
+- Each Subscription belongs to exactly one User
+
+- Relationships are enforced using MongoDB ObjectId references via Mongoose
+
+🔐 Data Constraints & Validation
+
+- email is unique per user
+
+- price must be a positive number
+
+- billingCycle is restricted to predefined values (e.g., monthly, yearly)
+
+- userId is required for every subscription
+
+- Timestamps are automatically managed (createdAt, updatedAt)

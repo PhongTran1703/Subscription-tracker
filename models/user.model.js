@@ -20,6 +20,7 @@ const userSchema = new mongoose.Schema({
         type: String, 
         required: [true, 'User Password is required'],
         minLength: 6,
+        select: false, // hide password by default
     }
     }, { timestamps: true });
 
