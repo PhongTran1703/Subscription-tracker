@@ -14,8 +14,6 @@ Designed and built a production-ready RESTful API from scratch, following real-w
 
 - Manually tested API endpoints using HTTPie
 
-- Containerized the application with Docker and set up CI/CD pipelines using GitHub Actions for automated testing and deployment
-
 ** Key Technologies: **
 Node.js, Express.js, MongoDB, Mongoose, REST APIs, JWT Authentication, Docker, GitHub Actions (CI/CD), HTTPie, Backend Architecture
 
