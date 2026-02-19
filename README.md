@@ -1,7 +1,5 @@
 ### Subscription Tracker (Backend API)
 
-Designed and built a production-ready RESTful API from scratch, following real-world backend architecture and best practices.
-
 - Developed a Node.js & Express.js server with modular routing, controllers, and middleware to ensure scalability and maintainability
 
 - Implemented JWT-based authentication and authorization, securing private routes and managing user sessions
