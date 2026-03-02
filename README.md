@@ -1,7 +1,5 @@
 ### Subscription Tracker (Backend API)
 
-Designed and built a production-ready RESTful API from scratch, following real-world backend architecture and best practices.
-
 - Developed a Node.js & Express.js server with modular routing, controllers, and middleware to ensure scalability and maintainability
 
 - Implemented JWT-based authentication and authorization, securing private routes and managing user sessions
@@ -13,8 +11,6 @@ Designed and built a production-ready RESTful API from scratch, following real-w
 - Implemented scheduled jobs and background tasks to handle automated subscription workflows
 
 - Manually tested API endpoints using HTTPie
-
-- Containerized the application with Docker and set up CI/CD pipelines using GitHub Actions for automated testing and deployment
 
 ** Key Technologies: **
 Node.js, Express.js, MongoDB, Mongoose, REST APIs, JWT Authentication, Docker, GitHub Actions (CI/CD), HTTPie, Backend Architecture
