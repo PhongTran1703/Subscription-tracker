@@ -1,5 +1,6 @@
 import User from '../models/user.model.js'
 
+//Get all users
 export const getUsers = async (req, res) => {
     try{
 
@@ -11,6 +12,7 @@ export const getUsers = async (req, res) => {
     }
 }
 
+// Find one user
 export const getUser = async (req, res) => {
     try{
 

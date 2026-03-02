@@ -1,0 +1,13 @@
+FROM node:current-alpine3.23
+
+WORKDIR /app
+
+COPY package.json /app
+
+RUN npm install
+
+COPY . /app
+
+ENTRYPOINT ["npm"]
+
+CMD ["run", "dev"]
